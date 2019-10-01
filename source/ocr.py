@@ -39,10 +39,10 @@ class OCR(Model):
 							  "model_type": "ocr"})
 		headers = {'Content-Type': "application/json"}
 		response =  requests.request("POST",
-									url, 
-									headers=headers, 
-									data=payload,
-									auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
+					     url, 
+					     headers=headers, 
+					     data=payload,
+					     auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
 		self.model_id = response.json()["model_id"]
 		print("Your Model ID is: ", self.model_id)
 
@@ -105,8 +105,8 @@ class OCR(Model):
 				batch_files.append(('file', (img_name, open(file, 'rb'), 'image/jpeg')))
 			batch_files.append(('data', ('', json.dumps(batch_data))))
 			response = requests.post(url, 
-									 auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 
-									 files=batch_files)
+						 auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 
+						 files=batch_files)
 			batch_nb+=1
 
 	### FIGURE THIS ONE OUT. UPLOAD IMAGES AND ANNOTATE THEM ON THE PLATFORM.
@@ -161,8 +161,8 @@ class OCR(Model):
 		url = self.host + 'OCR/Model/' + self.model_id + '/LabelFile/'
 		params = {'file': open(file_path, 'rb')}
 		response = requests.post(url,
-								auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								files=params) 
+					auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					files=params) 
 		result = read_prediction_response([response], 'OCR')
 		return result
 
@@ -227,8 +227,8 @@ class OCR(Model):
 				batch_files.append(('file', (img_name, open(file, 'rb'), 'image/jpeg')))
 			batch_files.append(('data', ('', json.dumps(batch_data))))
 			response = session.post(url, 
-									 auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
-									 files=batch_files)
+						auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
+						files=batch_files)
 			responses.append(response)
 			batch_nb+=1
 		result = read_prediction_response(responses, 'OCR')
