@@ -38,9 +38,9 @@ class Model:
 			headers = {'Accept': "application/x-www-form-urlencoded"}
 			payload = {"categories": categories}
 		response =  requests.request("POST", url, 
-									headers=headers, 
-									data=payload,
-									auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
+					     headers=headers, 
+					     data=payload,
+					     auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
 		self.model_id = response.json()["model_id"]
 		print("Your Model ID is: ", self.model_id)
 		return response
@@ -71,8 +71,8 @@ class Model:
 				  'modelId': ('', self.model_id),
 				  'data' :('', annotation)}
 		response = requests.post(url,
-								files=params, 
-								auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
+					files=params, 
+					auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
 		return response
 
 	def _train(self):
@@ -95,8 +95,8 @@ class Model:
 		headers = {'authorization': 'Basic %s'%self.api_key}
 		params = {'modelId': self.model_id}
 		response = requests.request("POST", url,
-									params=params,
-									auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
+					    params=params,
+					    auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
 		print(response.text)
 		return response
 
@@ -117,7 +117,7 @@ class Model:
 
 		url = self.host + self.model_type + '/Model/' + self.model_id
 		response = requests.request("GET", url,
-									auth=requests.auth.HTTPBasicAuth(self.api_key,''))
+					auth=requests.auth.HTTPBasicAuth(self.api_key,''))
 		state = response.json()["state"]
 		status = response.json()["status"]
 		if state != 5:
@@ -145,6 +145,6 @@ class Model:
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/LabelUrls/'
 		params = {'modelId': self.model_id, 'urls': image_urls}
 		response = requests.post(url,
-								auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								data=params) 
+					auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					data=params) 
 		return response
