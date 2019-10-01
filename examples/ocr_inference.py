@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/Users/anuj/Desktop/nanonets-github/nanonets-pip')
+sys.path.append('/Users/anuj/Desktop/nanonets-github/nanonets-python-wrapper')
 
 from source.ocr import OCR as ocr
 import json
