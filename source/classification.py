@@ -64,8 +64,8 @@ class ImageClassification(Model):
 				  'modelId': ('', self.model_id),
 				  'category': ('', label)}
 		response = requests.post(url,
-								files=params, 
-								auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
+					files=params, 
+					auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
 		return response
 
 	def upload_image_files(self, training_dict, batch_size=20):
@@ -104,8 +104,8 @@ class ImageClassification(Model):
 					image_name = image.split('/')[-1]
 					multiple_files.append(('file', (image_name, open(image, 'rb'), 'image/jpeg')))
 				response = requests.post(url, 
-										 auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
-										 files=multiple_files)
+							 auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
+							 files=multiple_files)
 				responses.append(response)
 				batch_nb+=1
 		return responses
@@ -165,9 +165,9 @@ class ImageClassification(Model):
 				'category': category}
 			headers = { 'accept': 'application/x-www-form-urlencoded'}
 			response = requests.post(url,
-									 headers=headers,
-									 auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-									 data=data)
+						 headers=headers,
+						 auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+						 data=data)
 			responses.append(response)
 		return responses
 
@@ -212,8 +212,8 @@ class ImageClassification(Model):
 		url = self.host + self.model_type + '/LabelFile/?modelId=%s'%(self.model_id)
 		params = {'file': open(file_path, 'rb')}
 		response = requests.post(url,
-								 auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								 files=params) 
+					 auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					 files=params) 
 		result = read_prediction_response([response], self.model_type)
 		return result
 
@@ -236,9 +236,9 @@ class ImageClassification(Model):
 		headers = {'accept': 'application/x-www-form-urlencoded'}
 		params = {'modelId': self.model_id, 'urls': [image_url]}
 		response = requests.post(url,
-								 headers=headers,
-								auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								data=params) 
+					headers=headers,
+					auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					data=params) 
 		result = read_prediction_response([response], self.model_type)
 		return result
 
@@ -281,8 +281,8 @@ class ImageClassification(Model):
 				image_name = image.split('/')[-1]
 				multiple_files.append(('file', (image_name, open(image, 'rb'), 'image/jpeg')))
 			response = session.post(url, 
-									 auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 	
-									 files=multiple_files)
+						auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 	
+						files=multiple_files)
 			responses.append(response)
 			batch_nb+=1
 		result = read_prediction_response(responses, self.model_type)
@@ -306,8 +306,8 @@ class ImageClassification(Model):
 		headers = {'accept': 'application/x-www-form-urlencoded'}
 		params = {'modelId': self.model_id, 'urls': urls}
 		response = requests.post(url,
-								 headers=headers,
-								auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								data=params) 
+					headers=headers,
+					auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					data=params) 
 		result = read_prediction_response([response], self.model_type)
 		return result
