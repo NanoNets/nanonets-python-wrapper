@@ -78,8 +78,8 @@ class ObjectDetection(Model):
 				batch_files.append(('file', (img_name, open(file, 'rb'), 'image/jpeg')))
 			batch_files.append(('data', ('', json.dumps(batch_data))))
 			response = requests.post(url, 
-									 auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 
-									 files=batch_files)
+						 auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 
+						 files=batch_files)
 			batch_nb+=1
 
 	### FIGURE THIS ONE OUT. UPLOAD IMAGES AND ANNOTATE THEM ON THE PLATFORM.
@@ -130,8 +130,8 @@ class ObjectDetection(Model):
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/LabelFile/'
 		params = {'file': open(file_path, 'rb')}
 		response = requests.post(url,
-								auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								files=params) 
+					auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					files=params) 
 		result = read_prediction_response([response], self.model_type)
 		return result
 
@@ -196,8 +196,8 @@ class ObjectDetection(Model):
 				batch_files.append(('file', (img_name, open(file, 'rb'), 'image/jpeg')))
 			batch_files.append(('data', ('', json.dumps(batch_data))))
 			response = session.post(url, 
-									 auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 
-									 files=batch_files)
+						auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 
+						files=batch_files)
 			print('time taken: ', response.elapsed.total_seconds())
 			responses.append(response)
 			batch_nb+=1
