@@ -24,7 +24,7 @@ def process_annotations(image_name, annotation_path):
 	elif annotation_path.endswith('.xml'):
 		json_data = annotation_xml_to_json(annotation_path)
 	annotation = {"filename": image_name, 
-			  	  "object": json.loads(json_data)}
+		      "object": json.loads(json_data)}
 	return annotation	
 
 def read_prediction_response(response_list, model):
