@@ -77,8 +77,8 @@ class MultilabelClassification(Model):
 				batch_files.append(('files', (img_name, open(file, 'rb'), 'image/jpeg')))
 			batch_files.append(('data', ('', json.dumps(batch_data))))
 			response = requests.post(url, 
-									 auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
-									 files=batch_files)
+						 auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
+						 files=batch_files)
 			batch_nb+=1
 
 
@@ -107,9 +107,9 @@ class MultilabelClassification(Model):
 			'categories': label_list}
 		headers = { 'accept': 'application/x-www-form-urlencoded'}
 		response = requests.post(url,
-								 headers=headers,
-								 auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								 data=data)
+					 headers=headers,
+					 auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					 data=data)
 		return response
 
 	def upload_image_urls(self, training_dict):
@@ -134,9 +134,9 @@ class MultilabelClassification(Model):
 			'categories': list(training_dict.values())}
 		headers = { 'accept': 'application/x-www-form-urlencoded'}
 		response = requests.post(url,
-								 headers=headers,
-								 auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								 data=data)
+					 headers=headers,
+					 auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					 data=data)
 		return response
 
 	def train(self, training_dict, data_path_type, batch_size=20):
@@ -181,8 +181,8 @@ class MultilabelClassification(Model):
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/LabelFiles/'
 		params = {'files': open(file_path, 'rb'), 'modelId': ('', self.model_id)}
 		response = requests.post(url,
-								auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
-								files=params) 
+					auth=requests.auth.HTTPBasicAuth(self.api_key, ''),
+					files=params) 
 		result = read_prediction_response([response], self.model_type)
 		return result
 
@@ -247,8 +247,8 @@ class MultilabelClassification(Model):
 				batch_files.append(('files', (img_name, open(file, 'rb'), 'image/jpeg')))
 			batch_files.append(('data', ('', json.dumps(batch_data))))
 			response = session.post(url, 
-									 auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
-									 files=batch_files)
+						auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
+						files=batch_files)
 			responses.append(response)
 			batch_nb+=1
 		result = read_prediction_response(responses, self.model_type)
