@@ -1,0 +1,325 @@
+,files,labels
+0,63.jpg,"['car', 'road', 'plate']"
+1,189.jpg,['car']
+2,77.jpg,"['plate', 'car', 'road']"
+3,162.jpg,"['road', 'car']"
+4,176.jpg,"['road', 'car']"
+5,88.jpg,['road']
+6,228.jpg,['plate']
+7,214.jpg,"['plate', 'road', 'car']"
+8,200.jpg,"['car', 'plate', 'road']"
+9,201.jpg,"['road', 'car']"
+10,215.jpg,['road']
+11,229.jpg,"['road', 'car']"
+12,177.jpg,['plate']
+13,89.jpg,['car']
+14,163.jpg,"['road', 'car']"
+15,188.jpg,"['road', 'car', 'plate']"
+16,76.jpg,"['plate', 'road', 'car']"
+17,62.jpg,"['car', 'plate']"
+18,74.jpg,"['road', 'car']"
+19,60.jpg,"['plate', 'road']"
+20,48.jpg,"['road', 'plate', 'car']"
+21,149.jpg,"['road', 'car', 'plate']"
+22,175.jpg,"['road', 'car', 'plate']"
+23,161.jpg,"['road', 'car', 'plate']"
+24,203.jpg,['plate']
+25,217.jpg,['car']
+26,216.jpg,"['road', 'plate']"
+27,202.jpg,"['car', 'road']"
+28,160.jpg,"['road', 'car']"
+29,174.jpg,"['plate', 'road']"
+30,148.jpg,"['car', 'road', 'plate']"
+31,49.jpg,['road']
+32,61.jpg,['car']
+33,75.jpg,"['plate', 'car', 'road']"
+34,59.jpg,"['car', 'road', 'plate']"
+35,71.jpg,"['plate', 'road', 'car']"
+36,65.jpg,"['car', 'plate']"
+37,170.jpg,['road']
+38,164.jpg,"['plate', 'car', 'road']"
+39,158.jpg,['road']
+40,206.jpg,['car']
+41,212.jpg,"['car', 'plate']"
+42,213.jpg,['road']
+43,207.jpg,['plate']
+44,159.jpg,"['plate', 'road', 'car']"
+45,165.jpg,"['road', 'plate']"
+46,171.jpg,"['plate', 'car']"
+47,64.jpg,"['car', 'road', 'plate']"
+48,70.jpg,"['car', 'plate']"
+49,58.jpg,"['car', 'plate']"
+50,8.jpg,['road']
+51,198.jpg,['car']
+52,66.jpg,"['road', 'plate']"
+53,72.jpg,"['road', 'plate', 'car']"
+54,167.jpg,"['car', 'road', 'plate']"
+55,99.jpg,['car']
+56,173.jpg,"['car', 'road']"
+57,211.jpg,"['car', 'road']"
+58,205.jpg,"['plate', 'road']"
+59,239.jpg,"['plate', 'road']"
+60,238.jpg,"['plate', 'car', 'road']"
+61,204.jpg,"['car', 'road', 'plate']"
+62,210.jpg,['plate']
+63,172.jpg,"['plate', 'car', 'road']"
+64,166.jpg,"['plate', 'road', 'car']"
+65,98.jpg,"['plate', 'car']"
+66,73.jpg,['road']
+67,199.jpg,"['car', 'road', 'plate']"
+68,67.jpg,['road']
+69,9.jpg,"['road', 'car', 'plate']"
+70,14.jpg,"['plate', 'road']"
+71,28.jpg,"['road', 'car', 'plate']"
+72,129.jpg,"['road', 'plate']"
+73,101.jpg,['plate']
+74,115.jpg,['plate']
+75,303.jpg,"['plate', 'road', 'car']"
+76,317.jpg,"['plate', 'road', 'car']"
+77,288.jpg,"['road', 'car', 'plate']"
+78,277.jpg,"['plate', 'car', 'road']"
+79,263.jpg,"['plate', 'road', 'car']"
+80,262.jpg,"['road', 'plate', 'car']"
+81,276.jpg,['road']
+82,289.jpg,"['plate', 'car', 'road']"
+83,316.jpg,['road']
+84,302.jpg,"['car', 'road']"
+85,114.jpg,"['road', 'plate', 'car']"
+86,100.jpg,"['road', 'car', 'plate']"
+87,128.jpg,"['plate', 'car']"
+88,29.jpg,['road']
+89,15.jpg,"['plate', 'road']"
+90,17.jpg,"['car', 'plate', 'road']"
+91,116.jpg,"['car', 'road']"
+92,102.jpg,"['plate', 'car']"
+93,314.jpg,"['car', 'road']"
+94,300.jpg,['car']
+95,248.jpg,['plate']
+96,260.jpg,"['car', 'road', 'plate']"
+97,274.jpg,"['road', 'plate']"
+98,275.jpg,['car']
+99,261.jpg,"['road', 'plate', 'car']"
+100,249.jpg,"['car', 'road', 'plate']"
+101,301.jpg,"['car', 'road']"
+102,315.jpg,"['road', 'car']"
+103,103.jpg,['plate']
+104,117.jpg,"['road', 'car']"
+105,16.jpg,"['plate', 'road']"
+106,12.jpg,['plate']
+107,113.jpg,"['car', 'plate']"
+108,107.jpg,"['plate', 'road']"
+109,311.jpg,"['road', 'car']"
+110,305.jpg,"['road', 'car', 'plate']"
+111,265.jpg,['plate']
+112,271.jpg,"['car', 'road', 'plate']"
+113,259.jpg,"['plate', 'road', 'car']"
+114,258.jpg,"['car', 'plate', 'road']"
+115,270.jpg,['plate']
+116,264.jpg,"['road', 'plate', 'car']"
+117,304.jpg,['plate']
+118,310.jpg,"['plate', 'car', 'road']"
+119,106.jpg,"['plate', 'car', 'road']"
+120,112.jpg,"['car', 'plate', 'road']"
+121,13.jpg,"['road', 'plate', 'car']"
+122,39.jpg,['plate']
+123,11.jpg,"['car', 'plate', 'road']"
+124,104.jpg,"['plate', 'road', 'car']"
+125,110.jpg,"['car', 'plate', 'road']"
+126,138.jpg,"['plate', 'car']"
+127,306.jpg,"['road', 'plate']"
+128,312.jpg,"['car', 'plate', 'road']"
+129,299.jpg,"['car', 'road', 'plate']"
+130,272.jpg,"['road', 'car', 'plate']"
+131,266.jpg,"['car', 'road', 'plate']"
+132,267.jpg,"['car', 'road', 'plate']"
+133,273.jpg,"['road', 'car', 'plate']"
+134,298.jpg,"['car', 'road']"
+135,313.jpg,"['car', 'plate']"
+136,307.jpg,"['road', 'car']"
+137,139.jpg,"['plate', 'road', 'car']"
+138,111.jpg,"['road', 'car']"
+139,105.jpg,"['car', 'road']"
+140,10.jpg,"['car', 'road', 'plate']"
+141,38.jpg,"['road', 'plate', 'car']"
+142,21.jpg,"['road', 'car']"
+143,35.jpg,"['car', 'plate']"
+144,108.jpg,"['road', 'car', 'plate']"
+145,120.jpg,"['car', 'road', 'plate']"
+146,134.jpg,['plate']
+147,322.jpg,"['road', 'car']"
+148,295.jpg,"['plate', 'car']"
+149,281.jpg,"['road', 'car']"
+150,256.jpg,['road']
+151,242.jpg,['road']
+152,243.jpg,['car']
+153,257.jpg,"['road', 'plate']"
+154,280.jpg,"['road', 'plate']"
+155,294.jpg,"['plate', 'car']"
+156,323.jpg,['car']
+157,135.jpg,"['road', 'car']"
+158,121.jpg,['plate']
+159,109.jpg,"['road', 'plate', 'car']"
+160,34.jpg,"['road', 'car', 'plate']"
+161,20.jpg,"['car', 'road', 'plate']"
+162,36.jpg,['car']
+163,22.jpg,"['plate', 'car', 'road']"
+164,137.jpg,['road']
+165,123.jpg,['car']
+166,309.jpg,"['plate', 'road']"
+167,321.jpg,"['plate', 'car']"
+168,282.jpg,"['road', 'car', 'plate']"
+169,296.jpg,"['plate', 'car']"
+170,269.jpg,"['car', 'plate']"
+171,241.jpg,"['plate', 'car', 'road']"
+172,255.jpg,['road']
+173,254.jpg,['road']
+174,240.jpg,"['plate', 'car', 'road']"
+175,268.jpg,['car']
+176,297.jpg,['car']
+177,283.jpg,"['car', 'road']"
+178,320.jpg,"['plate', 'car']"
+179,308.jpg,['car']
+180,122.jpg,"['car', 'road', 'plate']"
+181,136.jpg,['plate']
+182,23.jpg,"['car', 'plate', 'road']"
+183,37.jpg,"['plate', 'car']"
+184,33.jpg,['plate']
+185,27.jpg,"['road', 'car']"
+186,132.jpg,"['road', 'car']"
+187,126.jpg,"['car', 'plate']"
+188,318.jpg,['road']
+189,287.jpg,"['car', 'road']"
+190,293.jpg,"['plate', 'road']"
+191,244.jpg,"['road', 'plate', 'car']"
+192,250.jpg,"['plate', 'road']"
+193,278.jpg,"['road', 'car', 'plate']"
+194,279.jpg,['plate']
+195,251.jpg,"['car', 'road', 'plate']"
+196,245.jpg,['road']
+197,292.jpg,['car']
+198,286.jpg,"['plate', 'road', 'car']"
+199,319.jpg,['car']
+200,127.jpg,"['plate', 'road']"
+201,133.jpg,"['plate', 'road', 'car']"
+202,26.jpg,['road']
+203,32.jpg,['plate']
+204,18.jpg,"['road', 'plate']"
+205,24.jpg,"['road', 'plate']"
+206,30.jpg,"['car', 'plate']"
+207,125.jpg,"['road', 'car', 'plate']"
+208,131.jpg,['road']
+209,119.jpg,"['road', 'car']"
+210,290.jpg,"['road', 'plate', 'car']"
+211,284.jpg,['road']
+212,253.jpg,"['road', 'car', 'plate']"
+213,247.jpg,"['plate', 'car', 'road']"
+214,246.jpg,"['plate', 'road']"
+215,252.jpg,['road']
+216,285.jpg,"['car', 'plate']"
+217,291.jpg,"['car', 'plate']"
+218,118.jpg,['car']
+219,130.jpg,"['plate', 'car']"
+220,124.jpg,"['plate', 'car', 'road']"
+221,31.jpg,"['road', 'car', 'plate']"
+222,25.jpg,['road']
+223,19.jpg,"['plate', 'road']"
+224,42.jpg,['car']
+225,4.jpg,"['car', 'plate', 'road']"
+226,56.jpg,"['car', 'road', 'plate']"
+227,180.jpg,['car']
+228,194.jpg,"['car', 'road']"
+229,81.jpg,"['car', 'plate', 'road']"
+230,95.jpg,"['road', 'car']"
+231,143.jpg,"['car', 'road', 'plate']"
+232,157.jpg,"['plate', 'road', 'car']"
+233,209.jpg,"['road', 'car', 'plate']"
+234,235.jpg,"['plate', 'car', 'road']"
+235,221.jpg,"['road', 'plate', 'car']"
+236,220.jpg,"['car', 'road']"
+237,234.jpg,['car']
+238,208.jpg,['road']
+239,156.jpg,['plate']
+240,142.jpg,"['plate', 'car', 'road']"
+241,94.jpg,"['road', 'car']"
+242,80.jpg,"['car', 'road', 'plate']"
+243,195.jpg,['car']
+244,181.jpg,['road']
+245,5.jpg,"['car', 'plate']"
+246,57.jpg,"['plate', 'car']"
+247,43.jpg,['road']
+248,55.jpg,"['plate', 'car']"
+249,7.jpg,"['car', 'road', 'plate']"
+250,41.jpg,['road']
+251,69.jpg,['road']
+252,197.jpg,['road']
+253,183.jpg,"['road', 'car', 'plate']"
+254,96.jpg,"['road', 'car', 'plate']"
+255,168.jpg,"['car', 'plate', 'road']"
+256,82.jpg,['road']
+257,154.jpg,['road']
+258,140.jpg,"['car', 'plate']"
+259,222.jpg,"['plate', 'car', 'road']"
+260,236.jpg,['road']
+261,237.jpg,"['car', 'road']"
+262,223.jpg,['plate']
+263,141.jpg,"['plate', 'car']"
+264,155.jpg,"['car', 'plate']"
+265,83.jpg,"['plate', 'car', 'road']"
+266,97.jpg,"['road', 'car', 'plate']"
+267,169.jpg,"['car', 'plate']"
+268,182.jpg,"['road', 'car']"
+269,68.jpg,"['road', 'plate']"
+270,196.jpg,['road']
+271,40.jpg,"['car', 'plate', 'road']"
+272,54.jpg,"['road', 'car', 'plate']"
+273,6.jpg,['plate']
+274,192.jpg,"['road', 'plate']"
+275,78.jpg,['car']
+276,186.jpg,"['car', 'road', 'plate']"
+277,2.jpg,"['plate', 'car', 'road']"
+278,50.jpg,['road']
+279,44.jpg,"['plate', 'road', 'car']"
+280,151.jpg,"['car', 'plate', 'road']"
+281,145.jpg,['plate']
+282,93.jpg,"['car', 'road']"
+283,87.jpg,"['road', 'car']"
+284,179.jpg,"['car', 'road', 'plate']"
+285,227.jpg,['plate']
+286,233.jpg,['car']
+287,232.jpg,"['plate', 'road', 'car']"
+288,226.jpg,['road']
+289,86.jpg,"['plate', 'road', 'car']"
+290,178.jpg,"['road', 'car', 'plate']"
+291,92.jpg,"['plate', 'road']"
+292,144.jpg,['car']
+293,150.jpg,"['road', 'car', 'plate']"
+294,45.jpg,"['plate', 'car', 'road']"
+295,3.jpg,"['plate', 'road']"
+296,51.jpg,"['car', 'plate', 'road']"
+297,79.jpg,"['road', 'car', 'plate']"
+298,187.jpg,"['plate', 'road', 'car']"
+299,193.jpg,"['car', 'plate']"
+300,185.jpg,"['car', 'plate', 'road']"
+301,191.jpg,"['road', 'car', 'plate']"
+302,47.jpg,"['road', 'plate', 'car']"
+303,53.jpg,"['car', 'plate']"
+304,1.jpg,"['plate', 'road', 'car']"
+305,146.jpg,"['road', 'plate', 'car']"
+306,152.jpg,"['road', 'car', 'plate']"
+307,84.jpg,"['road', 'plate']"
+308,90.jpg,"['road', 'plate']"
+309,230.jpg,"['car', 'road', 'plate']"
+310,224.jpg,"['plate', 'car', 'road']"
+311,218.jpg,['car']
+312,219.jpg,"['car', 'plate', 'road']"
+313,225.jpg,"['plate', 'car', 'road']"
+314,231.jpg,"['car', 'plate']"
+315,91.jpg,"['road', 'car']"
+316,85.jpg,"['car', 'road']"
+317,153.jpg,['road']
+318,147.jpg,"['car', 'road']"
+319,52.jpg,['road']
+320,0.jpg,"['car', 'plate']"
+321,46.jpg,"['plate', 'car']"
+322,190.jpg,"['plate', 'road', 'car']"
+323,184.jpg,"['road', 'plate', 'car']"
