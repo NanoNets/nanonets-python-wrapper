@@ -15,6 +15,8 @@ class ImageClassification(Model):
 		if not model_id:
 			self._create_model(categories)
 		else:
+			self.api_key = api_key
+			self.categories = categories
 			self.model_id = model_id
 
 	def train_dict_to_category_dict(self, training_dict):
@@ -193,7 +195,14 @@ class ImageClassification(Model):
 			self.upload_image_files(training_dict, batch_size=batch_size)
 		elif data_path_type == 'urls':
 			self.upload_image_urls(training_dict)
-		return self._train()
+		url = self.host + self.model_type + '/Train/'
+		headers = {'authorization': 'Basic %s'%self.api_key}
+		params = {'modelId': self.model_id}
+		response = requests.request("POST", url,
+					    params=params,
+					    auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
+		print(response.text)
+		return response
 
 	def predict_for_file(self, file_path):
 

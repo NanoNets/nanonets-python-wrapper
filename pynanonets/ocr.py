@@ -16,6 +16,8 @@ class OCR(Model):
 		if not model_id:
 			self.create_model(categories)
 		else:
+			self.api_key = api_key
+			self.categories = categories
 			self.model_id = model_id
 	
 	def create_model(self, categories):

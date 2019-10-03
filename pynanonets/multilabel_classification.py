@@ -15,6 +15,8 @@ class MultilabelClassification(Model):
 		if not model_id:
 			self._create_model(categories)
 		else:
+			self.api_key = api_key
+			self.categories = categories
 			self.model_id = model_id
 	
 	def upload_image_file(self, img_path, label_list):

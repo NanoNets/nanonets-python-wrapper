@@ -7,8 +7,8 @@ categories = ['number_plate']
 model = od(key, categories)
 
 image_files = pd.read_csv('../data/ocr.csv')
-files = ['../data/ocr.csv' + x for x in image_files['files'].values]
-labels = [x for x in image_files['labels'].values]
+files = ['../data/images/' + x for x in image_files['files'].values]
+labels = ['../data/annotations/json/' + x for x in image_files['labels'].values]
 
 training_dict = dict(zip(files, labels))
 

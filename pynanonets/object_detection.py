@@ -16,6 +16,8 @@ class ObjectDetection(Model):
 		if not model_id:
 			self._create_model(categories)
 		else:
+			self.api_key = api_key
+			self.categories = categories
 			self.model_id = model_id
 
 
@@ -75,7 +77,8 @@ class ObjectDetection(Model):
 			batch, files = files[:batch_size], files[batch_size:]
 			print('Batch {}/{} of images'.format(batch_nb, total_batches))				
 			for file in tqdm(batch):
-				batch_data.append(process_annotations(file.split('/')[-1], training_dict[file]))
+				img_name = file.split('/')[-1]
+				batch_data.append(process_annotations(img_name, training_dict[file]))
 				batch_files.append(('file', (img_name, open(file, 'rb'), 'image/jpeg')))
 			batch_files.append(('data', ('', json.dumps(batch_data))))
 			response = requests.post(url, 
