@@ -69,20 +69,18 @@ This will print a Model ID that you should note down for future reference. You c
 
 ## Preparing training data
 The training data, needs to be put into a dictionary format where 
-1. for image classification models - 
-keys - filepaths/urls of images
-values - labels for each image
-2. for multilabel classification models - 
-keys - filepaths/urls of images
-values - list of labels for each image
-3. for object detection models - 
-keys - filepaths of images
-values - annotation paths for each image
-NOTE - annotations can be in XML or JSON format. 
-4. for OCR models - 
-keys - filepaths of images
-values - annotation paths for each image
-NOTE - annotations can be in XML or JSON format. 
+* for image classification models - 
+ * keys - filepaths/urls of images
+ * values - labels for each image
+* for multilabel classification models - 
+ * keys - filepaths/urls of images
+ * values - list of labels for each image
+* for object detection models - 
+ * keys - filepaths of images
+ * values - annotation paths for each image (XML or JSON)
+* for OCR models - 
+ * keys - filepaths of images
+ * values - annotation paths for each image (XML or JSON)
 
 you can look into the data/annotations directory to get a better idea. 
 
