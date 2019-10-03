@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 NAME = "pynanonets"
-VERSION = "1.0.0"
+VERSION = "2.0.0"
 
 REQUIRES = [line.strip() for line in open("requirements.txt").readlines()]
 

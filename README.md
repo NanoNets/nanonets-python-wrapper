@@ -46,9 +46,9 @@ To create a new model
 ```python
 from pynanonets import ImageClassification
 
-# from nanonets import MultilabelClassification
-# from nanonets import ObjectDetection
-# from nanonets import OCR
+# from pynanonets import MultilabelClassification
+# from pynanonets import ObjectDetection
+# from pynanonets import OCR
 
 api_key = 'YOUR_API_KEY_GOES_HERE'
 categories = ['list', 'of', 'your', 'labels']
