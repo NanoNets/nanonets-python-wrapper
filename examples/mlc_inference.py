@@ -11,11 +11,11 @@ midmlc = 'YOUR_MODEL_ID'
 mmlc = mlc(key, categories, mmlcel_id=midmlc)
 
 ## list of file paths of several test images
-imglist = os.listdir('data/images')
-imglist = ['data/images/' + x for x in imglist]
+imglist = os.listdir('../data/images')
+imglist = ['../data/images/' + x for x in imglist]
 
 ## urls of several test images
-file = open('data/number_plates.json', 'r')
+file = open('../data/number_plates.json', 'r')
 urls = []
 for line in file:
 	urls.append(json.loads(line)['content'])

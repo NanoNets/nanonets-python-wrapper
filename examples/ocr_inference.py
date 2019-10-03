@@ -11,11 +11,11 @@ midocr = 'YOUR_MODEL_ID'
 modocr = ocr(key, categories, model_id=midocr)
 
 ## list of file paths of several test images
-imglist = os.listdir('data/images')
-imglist = ['data/images/' + x for x in imglist]
+imglist = os.listdir('../data/images')
+imglist = ['../data/images/' + x for x in imglist]
 
 ## urls of several test images
-file = open('data/number_plates.json', 'r')
+file = open('../data/number_plates.json', 'r')
 urls = []
 for line in file:
 	urls.append(json.loads(line)['content'])
