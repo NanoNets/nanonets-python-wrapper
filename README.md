@@ -15,7 +15,7 @@ The models that can be built are -
 3. Object Detection
 4. OCR 
 
-Check us out at https://nanonets.com
+Check us out at https://nanonets.com. <br>
 To find out about our GUI solution or to get your API key, check out https://app.nanonets.com
 
 ** **
