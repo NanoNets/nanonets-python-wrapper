@@ -7,7 +7,7 @@ categories = ['car', 'road', 'plate']
 model = mlc(key, categories)
 
 image_files = pd.read_csv('../data/mlc.csv')
-files = ['../data/classification.csv' + x for x in image_files['files'].values]
+files = ['../data/images/' + x for x in image_files['files'].values]
 labels = [eval(x) for x in image_files['labels'].values]
 
 training_dict = dict(zip(files, labels))
