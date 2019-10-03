@@ -1,4 +1,4 @@
-from nanonets.multilabel_classification import MultilabelClassification as mlc
+from pynanonets import MultilabelClassification as mlc
 import json
 import os
 

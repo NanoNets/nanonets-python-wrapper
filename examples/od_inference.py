@@ -1,4 +1,4 @@
-from nanonets.object_detection import ObjectDetection as od
+from pynanonets import ObjectDetection as od
 import json
 import os
 

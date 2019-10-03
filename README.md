@@ -1,10 +1,10 @@
 <div align="center">
   <a href="https://nanonets.com/">
-    <img src="https://nanonets.com/logo.png" alt="NanoNets Pedestrian Detection Python Sample" width="100"/>
+    <img src="https://nanonets.com/logo.png" alt="pynanonets - The NanoNets API Python Wrapper" width="100"/>
     </a>
 </div>
 
-<h1 align="center">The NanoNets API - Python Wrapper</h1>
+<h1 align="center">Pynanonets - The NanoNets API Python Wrapper</h1>
 
 ** **
 
@@ -25,7 +25,7 @@ To find out about our GUI solution or to get your API key, check out https://app
 ### Pip install - 
 Run the following command from your terminal to install using pip
 ```bash
-pip install nanonets
+pip install pynanonets
 ```
 
 ### Setuptools - 
@@ -44,7 +44,7 @@ To create a new model
 2. Click on 'COPY KEY'
 3. Create a model using the following python code
 ```python
-from nanonets import ImageClassification
+from pynanonets import ImageClassification
 
 # from nanonets import MultilabelClassification
 # from nanonets import ObjectDetection

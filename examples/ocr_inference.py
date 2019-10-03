@@ -1,4 +1,4 @@
-from nanonets.ocr import OCR as ocr
+from pynanonets import OCR as ocr
 import json
 import os
 

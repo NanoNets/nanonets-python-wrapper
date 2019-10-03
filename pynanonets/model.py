@@ -3,7 +3,7 @@ import json
 import requests
 from tqdm import tqdm
 
-from nanonets.utils import *
+from pynanonets.utils import *
 
 
 class Model:
