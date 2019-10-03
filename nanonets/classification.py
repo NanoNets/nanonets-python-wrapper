@@ -5,8 +5,8 @@ from tqdm import tqdm
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-from model import Model
-from utils import *
+from nanonets.model import Model
+from nanonets.utils import *
 
 class ImageClassification(Model):
 

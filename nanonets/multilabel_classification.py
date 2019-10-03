@@ -5,8 +5,8 @@ from tqdm import tqdm
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-from model import Model
-from utils import *
+from nanonets.model import Model
+from nanonets.utils import *
 
 class MultilabelClassification(Model):
 
@@ -56,7 +56,7 @@ class MultilabelClassification(Model):
 
 		Returns
 		-------
-		None
+		a list of responses for each batch if images uploaded
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/UploadFiles/'
@@ -66,6 +66,7 @@ class MultilabelClassification(Model):
 			total_batches = len(files)/batch_size
 		else:
 			total_batches = int(len(files)/batch_size) + 1
+		responses = []
 		while len(files) > 0:
 			batch_files = []
 			batch_data = []
@@ -79,8 +80,9 @@ class MultilabelClassification(Model):
 			response = requests.post(url, 
 						 auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
 						 files=batch_files)
+			responses.append(response)
 			batch_nb+=1
-
+		return responses
 
 	def upload_image_url(self, image_url, label_list):
 

@@ -5,8 +5,8 @@ from tqdm import tqdm
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-from model import Model
-from utils import *
+from nanonets.model import Model
+from nanonets.utils import *
 
 
 class OCR(Model):
@@ -84,7 +84,7 @@ class OCR(Model):
 
 		Returns
 		-------
-		None
+		a list of responses for each batch if images uploaded
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/UploadFile/'
@@ -94,6 +94,7 @@ class OCR(Model):
 			total_batches = len(files)/batch_size
 		else:
 			total_batches = int(len(files)/batch_size) + 1
+		responses = []
 		while len(files) > 0:
 			batch_files = []
 			batch_data = []
@@ -107,13 +108,15 @@ class OCR(Model):
 			response = requests.post(url, 
 						 auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 
 						 files=batch_files)
+			responses.append(response)
 			batch_nb+=1
+		return responses
 
-	### FIGURE THIS ONE OUT. UPLOAD IMAGES AND ANNOTATE THEM ON THE PLATFORM.
+	### UPLOAD IMAGES AND ANNOTATE THEM ON THE PLATFORM.
 	def upload_image_url(self, image_url, annotation_path):
 		pass
 
-	### FIGURE THIS ONE OUT. UPLOAD IMAGES AND ANNOTATE THEM ON THE PLATFORM.
+	### UPLOAD IMAGES AND ANNOTATE THEM ON THE PLATFORM.
 	def upload_image_urls(self, training_dict):
 		pass
 

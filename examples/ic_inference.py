@@ -1,9 +1,11 @@
-import sys
-sys.path.append('/Users/anuj/Desktop/nanonets-github/nanonets-python-wrapper')
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
-from source.classification import ImageClassification as ic
+from nanonets.classification import ImageClassification as ic
 import json
-import os
+
 
 key = 'YOUR_API_KEY'
 categories = ['number_plate', 'no_plate']
@@ -13,23 +15,24 @@ midic = 'YOUR_MODEL_ID'
 modic = ic(key, categories, model_id=midic)
 
 ## list of file paths of several test images
-imglist = os.listdir('sample_data/images')
-imglist = ['sample_data/images/' + x for x in imglist]
+imglist = os.listdir('data/images')
+imglist = ['data/images/' + x for x in imglist]
 
 ## urls of several test images
-file = open('sample_data/Indian_Number_plates.json', 'r')
+file = open('data/number_plates.json', 'r')
 urls = []
 for line in file:
 	urls.append(json.loads(line)['content'])
 
+
 ## prediction functions for files
 icrespone = modic.predict_for_file(imglist[0])
-print("ic response - single image: ", icrespone)
+print("IC response - single image: ", icrespone)
 icrespmul = modic.predict_for_files(imglist[:39])
-print("ic response - multiple images: ", icrespmul)
+print("IC response - multiple images: ", icrespmul)
 
 ## prediction functions for urls
 icurlresp = modic.predict_for_url(urls[0])
-print("ic response - single URL: ", icurlresp)
+print("IC response - single URL: ", icurlresp)
 icurlsresp = modic.predict_for_urls(urls[:39])
-print("ic response - multiple URLs: ", icurlsresp)
+print("IC response - multiple URLs: ", icurlsresp)
