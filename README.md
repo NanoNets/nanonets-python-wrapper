@@ -46,16 +46,9 @@ To create a new model
 ```python
 from nanonets import ImageClassification
 
-"""
-for multilabel classification models - 
-from nanonets import MultilabelClassification
-
-for object detection models - 
-from nanonets import ObjectDetection
-
-for OCR models - 
-from nanonets import OCR
-"""
+# from nanonets import MultilabelClassification
+# from nanonets import ObjectDetection
+# from nanonets import OCR
 
 api_key = 'YOUR_API_KEY_GOES_HERE'
 categories = ['list', 'of', 'your', 'labels']
