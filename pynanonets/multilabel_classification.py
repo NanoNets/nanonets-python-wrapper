@@ -65,7 +65,7 @@ class MultilabelClassification(Model):
 		files = list(training_dict.keys())
 		batch_nb = 1
 		if len(files)%batch_size == 0:
-			total_batches = len(files)/batch_size
+			total_batches = int(len(files)/batch_size)
 		else:
 			total_batches = int(int(len(files)/batch_size) + 1)
 		responses = []
