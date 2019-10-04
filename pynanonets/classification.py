@@ -91,12 +91,13 @@ class ImageClassification(Model):
 		train_dicts = self.train_dict_to_category_dict(training_dict)
 		responses = []
 		for category in self.categories:
+			print('Uploading for category: ', category)
 			batch_nb = 1
 			files = train_dicts[category]
 			if len(files)%batch_size == 0:
-				total_batches = len(files)/batch_size
+				total_batches = int(len(files)/batch_size)
 			else:
-				total_batches = int(len(files)/batch_size) + 1
+				total_batches = int(int(len(files)/batch_size) + 1)
 			url = self.host + self.model_type + '/UploadFile/?modelId=%s&category=%s'%(self.model_id, category)		
 			while len(train_dicts[category]) > 0:
 				multiple_files = []
@@ -196,12 +197,10 @@ class ImageClassification(Model):
 		elif data_path_type == 'urls':
 			self.upload_image_urls(training_dict)
 		url = self.host + self.model_type + '/Train/'
-		headers = {'authorization': 'Basic %s'%self.api_key}
 		params = {'modelId': self.model_id}
 		response = requests.request("POST", url,
 					    params=params,
 					    auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
-		print(response.text)
 		return response
 
 	def predict_for_file(self, file_path):
@@ -281,7 +280,7 @@ class ImageClassification(Model):
 		if len(files)%batch_size == 0:
 			total_batches = int(len(files)/batch_size)
 		else:
-			total_batches = int(len(files)/batch_size) + 1
+			total_batches = int(int(len(files)/batch_size) + 1)
 		while len(files) > 0:
 			print('Batch {}/{} of images'.format(batch_nb, total_batches))				
 			batch, files = files[:batch_size], files[batch_size:]

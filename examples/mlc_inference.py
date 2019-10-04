@@ -8,7 +8,7 @@ categories = ['car', 'road', 'plate']
 
 midmlc = 'YOUR_MODEL_ID'
 
-mmlc = mlc(key, categories, mmlcel_id=midmlc)
+modmlc = mlc(key, categories, model_id=midmlc)
 
 ## list of file paths of several test images
 imglist = os.listdir('../data/images')
@@ -22,13 +22,13 @@ for line in file:
 
 
 ## prediction functions for files
-mlcrespone = mmlc.predict_for_file(imglist[0])
+mlcrespone = modmlc.predict_for_file(imglist[0])
 print("MLC response - single image: ", mlcrespone)
-mlcrespmul = mmlc.predict_for_files(imglist[:39])
+mlcrespmul = modmlc.predict_for_files(imglist[:39])
 print("MLC response - multiple images: ", mlcrespmul)
 
 ## prediction functions for urls
-mlcurlresp = mmlc.predict_for_url(urls[0])
+mlcurlresp = modmlc.predict_for_url(urls[0])
 print("MLC response - single URL: ", mlcurlresp)
-mlcurlsresp = mmlc.predict_for_urls(urls[:39])
+mlcurlsresp = modmlc.predict_for_urls(urls[:39])
 print("MLC response - multiple URLs: ", mlcurlsresp)

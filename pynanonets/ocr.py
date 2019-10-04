@@ -95,7 +95,7 @@ class OCR(Model):
 		if len(files)%batch_size == 0:
 			total_batches = len(files)/batch_size
 		else:
-			total_batches = int(len(files)/batch_size) + 1
+			total_batches = int(int(len(files)/batch_size) + 1)
 		responses = []
 		while len(files) > 0:
 			batch_files = []
@@ -220,7 +220,7 @@ class OCR(Model):
 		if len(files)%batch_size == 0:
 			total_batches = int(len(files)/batch_size)
 		else:
-			total_batches = int(len(files)/batch_size) + 1
+			total_batches = int(int(len(files)/batch_size) + 1)
 		while len(files) > 0:
 			batch, files = files[:batch_size], files[batch_size:]
 			batch_files = []

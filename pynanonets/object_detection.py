@@ -69,7 +69,7 @@ class ObjectDetection(Model):
 		if len(files)%batch_size == 0:
 			total_batches = len(files)/batch_size
 		else:
-			total_batches = int(len(files)/batch_size) + 1
+			total_batches = int(int(len(files)/batch_size) + 1)
 		responses = []
 		while len(files) > 0:
 			batch_files = []
@@ -191,7 +191,7 @@ class ObjectDetection(Model):
 		if len(files)%batch_size == 0:
 			total_batches = int(len(files)/batch_size)
 		else:
-			total_batches = int(len(files)/batch_size) + 1
+			total_batches = int(int(len(files)/batch_size) + 1)
 		while len(files) > 0:
 			batch, files = files[:batch_size], files[batch_size:]
 			batch_files = []
@@ -203,9 +203,8 @@ class ObjectDetection(Model):
 				batch_files.append(('file', (img_name, open(file, 'rb'), 'image/jpeg')))
 			batch_files.append(('data', ('', json.dumps(batch_data))))
 			response = session.post(url, 
-						auth= requests.auth.HTTPBasicAuth(self.api_key, ''), 
+						auth=requests.auth.HTTPBasicAuth(self.api_key, ''), 
 						files=batch_files)
-			print('time taken: ', response.elapsed.total_seconds())
 			responses.append(response)
 			batch_nb+=1
 		result = read_prediction_response(responses, self.model_type)

@@ -92,12 +92,10 @@ class Model:
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/Train/'
-		headers = {'authorization': 'Basic %s'%self.api_key}
 		params = {'modelId': self.model_id}
 		response = requests.request("POST", url,
 					    params=params,
 					    auth=requests.auth.HTTPBasicAuth(self.api_key, ''))
-		print(response.text)
 		return response
 
 	def _check_model_state(self):
