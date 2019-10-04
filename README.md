@@ -22,12 +22,6 @@ To find out about our GUI solution or to get your API key, check out https://app
 
 ## Installation
 
-### Pip install - 
-Run the following command from your terminal to install using pip
-```bash
-pip install pynanonets
-```
-
 ### Setuptools - 
 To install using setuptools, run the following commands from your terminal
 ```bash
