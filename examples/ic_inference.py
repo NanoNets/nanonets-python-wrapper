@@ -1,4 +1,4 @@
-from pynanonets import ImageClassification as ic
+from nanonets import ImageClassification as ic
 import json
 import os
 

@@ -1,10 +1,10 @@
 <div align="center">
   <a href="https://nanonets.com/">
-    <img src="https://nanonets.com/logo.png" alt="pynanonets - The NanoNets API Python Wrapper" width="100"/>
+    <img src="https://nanonets.com/logo.png" alt="The NanoNets API Python Wrapper" width="100"/>
     </a>
 </div>
 
-<h1 align="center">Pynanonets - The NanoNets API Python Wrapper</h1>
+<h1 align="center">The NanoNets API Python Wrapper</h1>
 
 ** **
 
@@ -25,7 +25,7 @@ To find out about our GUI solution or to get your API key, check out https://app
 ### Pip install - 
 Run the following command from your terminal - 
 ```bash
-pip install pynanonets
+pip install nanonets
 ```
 
 ### Setuptools - 
@@ -44,11 +44,11 @@ To create a new model
 2. Click on 'COPY KEY'
 3. Create a model using the following python code
 ```python
-from pynanonets import ImageClassification
+from nanonets import ImageClassification
 
-# from pynanonets import MultilabelClassification
-# from pynanonets import ObjectDetection
-# from pynanonets import OCR
+# from nanonets import MultilabelClassification
+# from nanonets import ObjectDetection
+# from nanonets import OCR
 
 api_key = 'YOUR_API_KEY_GOES_HERE'
 categories = ['list', 'of', 'your', 'labels']
@@ -112,22 +112,19 @@ model_id = 'YOUR_MODEL_ID'
 model = ImageClassification(api_key, categories, model_id=model_id)
 
 ## list of file paths of several test images
-imglist = os.listdir('data/images')
-imglist = ['data/images/' + x for x in imglist]
+img_dir = 'PATH_TO_YOUR_IMAGES_DIR'
+imglist = os.listdir(img_dir)
+imglist = [img_dir + '/' + x for x in imglist]
 
 ## list of urls of several test images
-file = open('data/number_plates.json', 'r')
-urls = []
-for line in file:
-	urls.append(json.loads(line)['content'])
-
+urls = ['LIST', 'OF', 'YOUR', 'IMAGE', 'URLS']
 
 ## prediction functions for single file
 resp_one_file = model.predict_for_file(imglist[0])
 print("IC response - single image: ", resp_one_file)
 
 ## prediction functions for multiple files
-resp_mul_files = model.predict_for_files(imglist[:39])
+resp_mul_files = model.predict_for_files(imglist)
 print("IC response - multiple images: ", resp_mul_files)
 
 ## prediction functions for single url
@@ -135,6 +132,10 @@ resp_one_url = model.predict_for_url(urls[0])
 print("IC response - single URL: ", resp_one_url)
 
 ## prediction functions for multiple urls
-resp_mul_urls = model.predict_for_urls(urls[:39])
+resp_mul_urls = model.predict_for_urls(urls)
 print("IC response - multiple URLs: ", resp_mul_urls)
 ```
+
+** **
+
+ NOTE: The data in the ```data``` directory is meant to serve as examples and is generated randomly to demonstrate training and inference code in the ```examples``` directory. Use said data to understand the format requirements for the library and not for building models. 

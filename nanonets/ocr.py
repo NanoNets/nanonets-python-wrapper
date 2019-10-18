@@ -5,8 +5,8 @@ from tqdm import tqdm
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-from pynanonets.model import Model
-from pynanonets.utils import *
+from nanonets.model import Model
+from nanonets.utils import *
 
 
 class OCR(Model):
