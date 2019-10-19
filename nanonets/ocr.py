@@ -21,7 +21,6 @@ class OCR(Model):
 			self.model_id = model_id
 	
 	def create_model(self, categories):
-
 		"""
 		function to create model given the categories and model type
 
@@ -32,8 +31,7 @@ class OCR(Model):
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for to create model
 		"""
 
 		url = self.host + self.model_type + '/Model/' 
@@ -49,7 +47,6 @@ class OCR(Model):
 		print("Your Model ID is: ", self.model_id)
 
 	def upload_image_file(self, img_path, annotation_path):
-
 		"""
 		function to upload a single file and it's annotation for training 
 
@@ -63,15 +60,13 @@ class OCR(Model):
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for uploading image file and its annotation
 		"""
 		processed = [process_annotations(annotation_path)]
 		annotation = json.dumps(processed)
 		return self._upload_image_file(img_path, annotation)
 
 	def upload_image_files(self, training_dict, batch_size=20):
-
 		"""
 		function to upload multiple files and their annotations 
 
@@ -124,9 +119,8 @@ class OCR(Model):
 
 	### FIGURE OUT ADDING URLS
 	def train(self, training_dict, batch_size=20):
-
 		"""
-		function to upload a single file and it's annotation and initiate the training. 
+		function to upload a image files and annotations and initialize the training 
 
 		Parameters
 		----------
@@ -139,8 +133,7 @@ class OCR(Model):
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for uploading files and annotation and initializing training
 		"""
 
 		print("Uploading images ...")
@@ -149,13 +142,12 @@ class OCR(Model):
 		return self._train()
 
 	def predict_for_file(self, file_path):
-
 		"""
 		function to get prediction for a single image file
 
 		Parameters
 		----------
-		file_path: 
+		file_path: str 
 			path of the image you want to get predictions for
 
 		Returns
@@ -172,13 +164,12 @@ class OCR(Model):
 		return result
 
 	def predict_for_url(self, image_url):
-
 		"""
 		function to get prediction for a single image url
 
 		Parameters
 		----------
-		image_url: 
+		image_url: str
 			url of the image you want to get predictions for
 
 		Returns
@@ -191,7 +182,6 @@ class OCR(Model):
 		return result
 
 	def predict_for_files(self, files, batch_size=20):
-
 		"""
 		function to get predictions for multiple files 
 
@@ -240,9 +230,8 @@ class OCR(Model):
 		return result
 
 	def predict_for_urls(self, urls):
-
 		"""
-		function to get prediction for several images using their urls from a trained model
+		function to get prediction for several images using their urls 
 
 		Parameters
 		----------

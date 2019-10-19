@@ -20,7 +20,6 @@ class ImageClassification(Model):
 			self.model_id = model_id
 
 	def train_dict_to_category_dict(self, training_dict):
-
 		"""
 		function to split the training_dict into separate dicts for each category
 
@@ -43,7 +42,6 @@ class ImageClassification(Model):
 		return train_dicts
 
 	def upload_image_file(self, img_path, label):
-
 		"""
 		function to upload a single file and it's annotation for training 
 
@@ -57,8 +55,7 @@ class ImageClassification(Model):
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for uploading urls. 
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/UploadFile/'
@@ -71,7 +68,6 @@ class ImageClassification(Model):
 		return response
 
 	def upload_image_files(self, training_dict, batch_size=20):
-
 		"""
 		function to upload multiple files and their annotations 
 
@@ -85,7 +81,7 @@ class ImageClassification(Model):
 
 		Returns
 		-------
-		a list of responses for each batch if images uploaded
+		a list of responses for each batch of images uploaded
 		"""
 
 		train_dicts = self.train_dict_to_category_dict(training_dict)
@@ -114,7 +110,6 @@ class ImageClassification(Model):
 		return responses
 
 	def upload_image_url(self, image_url, label):
-
 		"""
 		function to upload image given by their url to a model that has been created
 
@@ -128,8 +123,7 @@ class ImageClassification(Model):
 
 		Returns
 		-------
-		list of server response for the request for uploading url. You can find response 
-		information from response.text
+		server response for the request for uploading url
 		"""
 
 		url = self.host + self.model_type + '/UploadUrls/'
@@ -144,19 +138,17 @@ class ImageClassification(Model):
 		return response
 
 	def upload_image_urls(self, training_dict):
-
-		"""function to upload images given by their urls to a model that has been created.
-		The advantage of using URLs is that you can upload multiple images at the same time.
+		"""
+		function to upload images given by their urls to a model that has been created
 
 		Parameters
 		----------
 		training_dict: Dict[str: str]
-		    Dict with keys as image file urls and values as the corresponding labels. 
+		    Dict with keys as image file urls and values as the corresponding labels 
 
 		Returns
 		-------
-		list of server response for the request for uploading urls for each category. 
-		You can find response information from response.text
+		list of server responses for the request for uploading urls for each category
 		"""
 
 		url = self.host + self.model_type + '/UploadUrls/'
@@ -175,22 +167,20 @@ class ImageClassification(Model):
 		return responses
 
 	def train(self, training_dict, data_path_type='files', batch_size=20):
-
 		"""
 		function to upload a single file and it's labels and initiate the training. 
 
 		Parameters
 		----------
 		training_dict: Dict[str: str]
-		    Dict with keys as image file urls/paths and values as the corresponding labels.
+		    Dict with keys as image file urls/paths and values as the corresponding labels
 
 		data_path_type: str
 			Can take values 'files' or 'urls'
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for intialising training
 		"""
 		if data_path_type == 'files':		
 			self.upload_image_files(training_dict, batch_size=batch_size)
@@ -204,7 +194,6 @@ class ImageClassification(Model):
 		return response
 
 	def predict_for_file(self, file_path):
-
 		"""
 		function to get prediction for a single image file
 
@@ -217,6 +206,7 @@ class ImageClassification(Model):
 		-------
 		JSON repsonse of the prediction 
 		"""
+
 		url = self.host + self.model_type + '/LabelFile/?modelId=%s'%(self.model_id)
 		params = {'file': open(file_path, 'rb')}
 		response = requests.post(url,
@@ -226,7 +216,6 @@ class ImageClassification(Model):
 		return result
 
 	def predict_for_url(self, image_url):
-
 		"""
 		function to get prediction for a single image file
 
@@ -251,7 +240,6 @@ class ImageClassification(Model):
 		return result
 
 	def predict_for_files(self, files, batch_size=20):
-
 		"""
 		function to get predictions for multiple image files 
 
@@ -297,14 +285,14 @@ class ImageClassification(Model):
 		return result
 
 	def predict_for_urls(self, urls):
-
 		"""
-		function to get prediction for several images using their urls from a trained model
+		function to get prediction for several images using their urls
 
 		Parameters
 		----------
 		urls: List[str]
-			list of urls of the images you want to get predictions for
+			list of urls of the images 
+
 		Returns
 		-------
 		JSON repsonse of the predictions

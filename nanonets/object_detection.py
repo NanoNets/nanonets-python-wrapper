@@ -22,7 +22,6 @@ class ObjectDetection(Model):
 
 
 	def upload_image_file(self, img_path, annotation_path):
-
 		"""
 		function to upload a single file and it's annotation for training 
 
@@ -36,8 +35,7 @@ class ObjectDetection(Model):
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for uploading image and annotations
 		"""
 
 		processed = [process_annotations(annotation_path)]
@@ -45,7 +43,6 @@ class ObjectDetection(Model):
 		return self._upload_image_file(img_path, annotation)
 
 	def upload_image_files(self, training_dict, batch_size=20):
-
 		"""
 		function to upload multiple files and their annotations 
 
@@ -60,7 +57,7 @@ class ObjectDetection(Model):
 
 		Returns
 		-------
-		a list of responses for each batch if images uploaded
+		a list of responses for each batch of images uploaded
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/UploadFile/'
@@ -98,9 +95,8 @@ class ObjectDetection(Model):
 
 	### FIGURE OUT ADDING URLS
 	def train(self, training_dict, batch_size=20):
-
 		"""
-		function to upload a single file and it's annotation and initiate the training. 
+		function to upload a image files and their annotations and initialize the training 
 
 		Parameters
 		----------
@@ -110,8 +106,7 @@ class ObjectDetection(Model):
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for unplading images and initializing training
 		"""
 
 		print("Uploading images ...")
@@ -120,13 +115,12 @@ class ObjectDetection(Model):
 		return self._train()
 
 	def predict_for_file(self, file_path):
-
 		"""
 		function to get prediction for a single image file
 
 		Parameters
 		----------
-		file_path: 
+		file_path: str
 			path of the image you want to get predictions for
 
 		Returns
@@ -143,13 +137,12 @@ class ObjectDetection(Model):
 		return result
 
 	def predict_for_url(self, image_url):
-
 		"""
 		function to get prediction for a single image url
 
 		Parameters
 		----------
-		image_url: 
+		image_url: str
 			url of the image you want to get predictions for
 
 		Returns
@@ -162,7 +155,6 @@ class ObjectDetection(Model):
 		return result
 
 	def predict_for_files(self, files, batch_size=20):
-
 		"""
 		function to get predictions for multiple files 
 
@@ -211,9 +203,8 @@ class ObjectDetection(Model):
 		return result
 
 	def predict_for_urls(self, urls):
-
 		"""
-		function to get prediction for several images using their urls from a trained model
+		function to get prediction for several images using their urls
 
 		Parameters
 		----------

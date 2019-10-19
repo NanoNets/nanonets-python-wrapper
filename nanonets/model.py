@@ -14,7 +14,6 @@ class Model:
 		self.host = "https://app.nanonets.com/api/v2/"
 
 	def _create_model(self, categories):
-
 		"""
 		function to create model given the categories and model type
 
@@ -25,8 +24,7 @@ class Model:
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request to create model
 		"""
 
 		self.categories = categories
@@ -46,10 +44,9 @@ class Model:
 		return response
 
 	def _upload_image_file(self, img_path, annotation):
-
 		"""
 		function to upload a single file and it's labels for training to a model that 
-		has been created.
+		has been created
 
 		Parameters
 		----------
@@ -57,12 +54,12 @@ class Model:
 		    path to the image we want to upload
 
 		annotation: 
-			list of all labels associated with the image (MLC) or JSON format for OD/OCR 
+			List[str] of all labels associated with the image for MLC 
+			or JSON file path for OD/OCR 
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for uploading image file
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/UploadFile/'
@@ -76,9 +73,8 @@ class Model:
 		return response
 
 	def _train(self):
-
 		"""
-		function to create model given the categories and model type as a calss attribute
+		function to start training of a model that has been created
 
 		Parameters
 		----------
@@ -87,8 +83,7 @@ class Model:
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request to initialize training
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/Train/'
@@ -99,7 +94,6 @@ class Model:
 		return response
 
 	def _check_model_state(self):
-
 		"""
 		function to check model state given you have the model id as a class attribute
 
@@ -109,8 +103,7 @@ class Model:
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request to get model state
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id
@@ -126,7 +119,6 @@ class Model:
 		return response
 
 	def _predict_urls(self, image_urls):
-
 		"""
 		function to get predictions for images using urls
 
@@ -137,7 +129,7 @@ class Model:
 
 		Returns
 		-------
-		JSON repsonse of the prediction 
+		JSON repsonse of the predictions 
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/LabelUrls/'

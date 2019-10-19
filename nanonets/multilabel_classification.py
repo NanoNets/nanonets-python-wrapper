@@ -20,7 +20,6 @@ class MultilabelClassification(Model):
 			self.model_id = model_id
 	
 	def upload_image_file(self, img_path, label_list):
-
 		"""
 		function to upload a single file and its labels for training to a model that 
 		has been created.
@@ -35,14 +34,12 @@ class MultilabelClassification(Model):
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for uploading image file and labels
 		"""
 
 		return self._upload_image_file(self, img_path, label_list)
 
 	def upload_image_files(self, training_dict, batch_size=20):		
-
 		"""
 		function to upload multiple files and their labels to a model that has been 
 		created.
@@ -58,7 +55,7 @@ class MultilabelClassification(Model):
 
 		Returns
 		-------
-		a list of responses for each batch if images uploaded
+		a list of responses for each batch of images uploaded
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/UploadFiles/'
@@ -87,7 +84,6 @@ class MultilabelClassification(Model):
 		return responses
 
 	def upload_image_url(self, image_url, label_list):
-
 		"""
 		function to upload image given by their url to a model that has been created
 
@@ -96,13 +92,12 @@ class MultilabelClassification(Model):
 		image_url: str
 		    path to the image we want to upload
 
-		label: str
-			label for the same image
+		label: List[str]
+			list of labels for the same image
 
 		Returns
 		-------
-		server response for the request for uploading url. You can find response 
-		information from response.text
+		server response for the request for uploading image using url
 		"""
 
 		url = self.host + self.model_type + '/UploadUrls/'
@@ -117,19 +112,17 @@ class MultilabelClassification(Model):
 		return response
 
 	def upload_image_urls(self, training_dict):
-
-		"""function to upload images given by their urls to a model that has been created.
-		The advantage of using URLs is that you can upload multiple images at the same time.
+		"""
+		function to upload images given by their urls to a model that has been created
 
 		Parameters
 		----------
 		training_dict: Dict[str: str]
-		    Dict with keys as image file urls and values as the corresponding labels. 
+		    Dict with keys as image file urls and values as the corresponding labels
 
 		Returns
 		-------
-		server response for the request for uploading urls for each category. 
-		You can find response information from response.text
+		server response for the request for uploading urls of images and their labels
 		"""
 
 		url = self.host + self.model_type + '/UploadUrls/'
@@ -144,7 +137,6 @@ class MultilabelClassification(Model):
 		return response
 
 	def train(self, training_dict, data_path_type='files', batch_size=20):
-
 		"""
 		function to upload image files/urls with their labels and initialise model training 
 
@@ -152,15 +144,14 @@ class MultilabelClassification(Model):
 		----------
 		training_dict: Dict[str: List[str]]
 		    Dict with keys as image file urls/paths and values as the corresponding list of 
-		    labels.
+		    labels
 
 		data_path_type: str
 			Can take values 'files' or 'urls'
 
 		Returns
 		-------
-		server response for the request for uploading urls. You can find response information
-		from response.text
+		server response for the request for uploading images
 		"""
 		if data_path_type == 'files':		
 			self.upload_image_files(training_dict, batch_size=batch_size)
@@ -169,13 +160,12 @@ class MultilabelClassification(Model):
 		return self._train()
 
 	def predict_for_file(self, file_path):
-
 		"""
 		function to get prediction for a single image file
 
 		Parameters
 		----------
-		file_path: 
+		file_path: str
 			path of the image you want to get predictions for
 
 		Returns
@@ -197,7 +187,7 @@ class MultilabelClassification(Model):
 
 		Parameters
 		----------
-		image_url: 
+		image_url: str
 			url of the image you want to get predictions for
 
 		Returns
@@ -210,14 +200,13 @@ class MultilabelClassification(Model):
 		return result
 
 	def predict_for_files(self, files, batch_size=20):
-
 		"""
 		function to get predictions for multiple files 
 
 		Parameters
 		----------
 		files: List[str]
-		    List of image file paths/urls
+		    List of image file paths
 
 		batch_size (optional): int
 			number of images to be uploaded per API request
@@ -259,7 +248,6 @@ class MultilabelClassification(Model):
 		return result
 
 	def predict_for_urls(self, urls):
-
 		"""
 		function to get prediction for a single image file from a trained model
 
@@ -267,10 +255,12 @@ class MultilabelClassification(Model):
 		----------
 		file_path: List[str]
 			list of urls of the images you want to get predictions for
+
 		Returns
 		-------
-		JSON repsonse of the prediction 
+		JSON repsonse of the predictions 
 		"""
+		
 		response = self._predict_urls(urls)
 		result = read_prediction_response([response], self.model_type)
 		return result
