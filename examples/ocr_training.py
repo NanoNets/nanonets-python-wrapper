@@ -1,14 +1,19 @@
 from nanonets import OCR as ocr
-import pandas as pd
+import csv
 
 key = 'YOUR_API_KEY'
 categories = ['number_plate']
 
 model = ocr(key, categories)
 
-image_files = pd.read_csv('../data/ocr.csv')
-files = ['../data/images/' + x for x in image_files['files'].values]
-labels = ['../data/annotations/json/' + x for x in image_files['labels'].values]
+files = []
+labels = []
+with open('../data/ocr.csv', 'r') as f:
+	reader = csv.reader(f, delimiter=',')
+	for i, row in enumerate(reader):
+		if i > 0:
+			files.append('../data/images/' + row[1])
+			labels.append('..data/annotations/json/' + row[2])
 
 training_dict = dict(zip(files, labels))
 

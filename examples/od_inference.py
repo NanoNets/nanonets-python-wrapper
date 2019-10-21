@@ -24,11 +24,11 @@ for line in file:
 ## prediction functions for files
 odrespone = modod.predict_for_file(imglist[0])
 print("OD response - single image: ", odrespone)
-odrespmul = modod.predict_for_files(imglist[:39])
+odrespmul = modod.predict_for_files(imglist[:5])
 print("OD response - multiple images: ", odrespmul)
 
 ## prediction functions for urls
 odurlresp = modod.predict_for_url(urls[0])
 print("OD response - single URL: ", odurlresp)
-odurlsresp = modod.predict_for_urls(urls[:39])
+odurlsresp = modod.predict_for_urls(urls[:5])
 print("OD response - multiple URLs: ", odurlsresp)

@@ -24,11 +24,11 @@ for line in file:
 ## prediction functions for files
 ocrrespone = modocr.predict_for_file(imglist[0])
 print("OCR response - single image: ", ocrrespone)
-ocrrespmul = modocr.predict_for_files(imglist[:39])
+ocrrespmul = modocr.predict_for_files(imglist[:5])
 print("OCR response - multiple images: ", ocrrespmul)
 
 ## prediction functions for urls
 ocrurlresp = modocr.predict_for_url(urls[0])
 print("OCR response - single URL: ", ocrurlresp)
-ocrurlsresp = modocr.predict_for_urls(urls[:39])
+ocrurlsresp = modocr.predict_for_urls(urls[:5])
 print("OCR response - multiple URLs: ", ocrurlsresp)

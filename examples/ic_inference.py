@@ -24,11 +24,11 @@ for line in file:
 ## prediction functions for files
 icrespone = modic.predict_for_file(imglist[0])
 print("IC response - single image: ", icrespone)
-icrespmul = modic.predict_for_files(imglist[:39])
+icrespmul = modic.predict_for_files(imglist[:5])
 print("IC response - multiple images: ", icrespmul)
 
 ## prediction functions for urls
 icurlresp = modic.predict_for_url(urls[0])
 print("IC response - single URL: ", icurlresp)
-icurlsresp = modic.predict_for_urls(urls[:39])
+icurlsresp = modic.predict_for_urls(urls[:5])
 print("IC response - multiple URLs: ", icurlsresp)

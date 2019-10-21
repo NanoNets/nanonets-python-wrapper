@@ -24,11 +24,11 @@ for line in file:
 ## prediction functions for files
 mlcrespone = modmlc.predict_for_file(imglist[0])
 print("MLC response - single image: ", mlcrespone)
-mlcrespmul = modmlc.predict_for_files(imglist[:39])
+mlcrespmul = modmlc.predict_for_files(imglist[:5])
 print("MLC response - multiple images: ", mlcrespmul)
 
 ## prediction functions for urls
 mlcurlresp = modmlc.predict_for_url(urls[0])
 print("MLC response - single URL: ", mlcurlresp)
-mlcurlsresp = modmlc.predict_for_urls(urls[:39])
+mlcurlsresp = modmlc.predict_for_urls(urls[:5])
 print("MLC response - multiple URLs: ", mlcurlsresp)
