@@ -204,7 +204,7 @@ class ImageClassification(Model):
 
 		Returns
 		-------
-		JSON repsonse of the prediction 
+		Dict with filepath as key and prediction as value 
 		"""
 
 		url = self.host + self.model_type + '/LabelFile/?modelId=%s'%(self.model_id)
@@ -226,7 +226,7 @@ class ImageClassification(Model):
 
 		Returns
 		-------
-		JSON repsonse of the prediction 
+		Dict with url as key and prediction as value 
 		"""
 
 		url = self.host + self.model_type + '/LabelUrls/'
@@ -295,7 +295,7 @@ class ImageClassification(Model):
 
 		Returns
 		-------
-		JSON repsonse of the predictions
+		Dict with urls as keys and predictions as values 
 		"""
 
 		url = self.host + self.model_type + '/LabelUrls/'

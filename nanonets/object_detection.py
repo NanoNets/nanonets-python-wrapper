@@ -125,7 +125,7 @@ class ObjectDetection(Model):
 
 		Returns
 		-------
-		JSON repsonse of the prediction 
+		Dict with filepath as key and prediction as value 
 		"""
 
 		url = self.host + self.model_type + '/Model/' + self.model_id + '/LabelFile/'
@@ -147,7 +147,7 @@ class ObjectDetection(Model):
 
 		Returns
 		-------
-		JSON repsonse of the prediction 
+		Dict with url as key and prediction as value 
 		"""
 
 		response = self._predict_urls([image_url])
@@ -212,7 +212,7 @@ class ObjectDetection(Model):
 			list of urls of the images you want to get predictions for
 		Returns
 		-------
-		JSON repsonse of the predictions
+		Dict with urls as keys and predictions as values 
 		"""
 
 		response = self._predict_urls(urls)
