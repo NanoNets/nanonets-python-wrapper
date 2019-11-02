@@ -106,17 +106,30 @@ class Model:
 		server response for the request to get model state
 		"""
 
-		url = self.host + self.model_type + '/Model/' + self.model_id
-		response = requests.request("GET", url,
+		annot_url = self.host + self.model_type + '/Model/' + self.model_id + '/Annotations'
+
+		annot_response = requests.request("GET", annot_url,
 					auth=requests.auth.HTTPBasicAuth(self.api_key,''))
-		state = response.json()["state"]
-		status = response.json()["status"]
+
+		img_count = len(annot_response.json()["Data"])
+		categories = annot_response.json()["Meta"]["categories"]
+		state = annot_response.json()["Meta"]["state"]
+		status = annot_response.json()["Meta"]["status"]
+
+		if self.model_type != 'ImageCategorization':			
+			assert img_count < 50, 'More images and annotations needed. Please upload atleast 50 images and their annotations' 
+			for category in categories:
+				assert category["count"] < 50, "Need at least 50 annotations for {} label, currently there are {} annotations".format(category["name"], category["count"])
+		else:
+			for category in categories:
+				assert category["count"] < 25, "Need at least 25 annotations for {} label, currently there are {} annotations".format(category["name"], category["count"])
+
 		if state != 5:
 			print("The model isn't ready yet, it's status is:", status)
 			print("We will send you an email when the model is ready.")
 		else:
 			print("Model is ready for predictions.")
-		return response
+		# return annot_response.json()["Meta"]
 
 	def _predict_urls(self, image_urls):
 		"""
