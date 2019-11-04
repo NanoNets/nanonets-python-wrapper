@@ -103,7 +103,7 @@ class Model:
 
 		Returns
 		-------
-		server response for the request to get model state
+		None
 		"""
 
 		annot_url = self.host + self.model_type + '/Model/' + self.model_id + '/Annotations'
