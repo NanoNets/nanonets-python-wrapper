@@ -139,6 +139,12 @@ class Model:
 		else:
 			print("Model is ready for predictions.")
 
+		fin_dict = {"state": state,
+					"status": status,
+					"categories": categories}
+
+		return fin_dict
+
 	def _predict_urls(self, image_urls):
 		"""
 		function to get predictions for images using urls
