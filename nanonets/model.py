@@ -126,12 +126,12 @@ class Model:
 			status = annot_response.json()["status"]
 
 		if self.model_type != 'ImageCategorization':			
-			assert img_count < 50, 'More images and annotations needed. Please upload atleast 50 images and their annotations' 
+			assert img_count > 50, 'More images and annotations needed. Please upload atleast 50 images and their annotations' 
 			for category in categories:
-				assert category["count"] < 50, "Need at least 50 annotations for {} label, currently there are {} annotations".format(category["name"], category["count"])
+				assert category["count"] > 50, "Need at least 50 annotations for {} label, currently there are {} annotations".format(category["name"], category["count"])
 		else:
 			for category in categories:
-				assert category["count"] < 25, "Need at least 25 annotations for {} label, currently there are {} annotations".format(category["name"], category["count"])
+				assert category["count"] > 25, "Need at least 25 annotations for {} label, currently there are {} annotations".format(category["name"], category["count"])
 
 		if state != 5:
 			print("The model isn't ready yet, it's status is:", status)
