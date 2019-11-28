@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 NAME = "nanonets"
-VERSION = "2.0.1"
+VERSION = "2.0.2"
 
 REQUIRES = [line.strip() for line in open("requirements.txt").readlines()]
 
