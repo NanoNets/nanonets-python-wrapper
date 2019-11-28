@@ -106,15 +106,24 @@ class Model:
 		None
 		"""
 
-		annot_url = self.host + self.model_type + '/Model/' + self.model_id + '/Annotations'
-
-		annot_response = requests.request("GET", annot_url,
-					auth=requests.auth.HTTPBasicAuth(self.api_key,''))
-
-		img_count = len(annot_response.json()["Data"])
-		categories = annot_response.json()["Meta"]["categories"]
-		state = annot_response.json()["Meta"]["state"]
-		status = annot_response.json()["Meta"]["status"]
+		if self.model_type != 'ImageCategorization':
+			annot_url = self.host + self.model_type + '/Model/' + self.model_id + '/Annotations'
+			annot_response = requests.request("GET", annot_url,
+						auth=requests.auth.HTTPBasicAuth(self.api_key,''))
+			img_count = len(annot_response.json()["Data"])
+			categories = annot_response.json()["Meta"]["categories"]
+			state = annot_response.json()["Meta"]["state"]
+			status = annot_response.json()["Meta"]["status"]
+		else:
+			annot_url = self.host + self.model_type + '/Model/'
+			querystring = {'modelId': self.model_id}
+			annot_response = requests.request('GET', annot_url, 
+						auth=requests.auth.HTTPBasicAuth(self.api_key,''), 
+						params=querystring)
+			categories = annot_response.json()["categories"]
+			img_count = sum([x['count'] for x in categories])
+			state = annot_response.json()["state"]
+			status = annot_response.json()["status"]
 
 		if self.model_type != 'ImageCategorization':			
 			assert img_count < 50, 'More images and annotations needed. Please upload atleast 50 images and their annotations' 
@@ -129,7 +138,6 @@ class Model:
 			print("We will send you an email when the model is ready.")
 		else:
 			print("Model is ready for predictions.")
-		# return annot_response.json()["Meta"]
 
 	def _predict_urls(self, image_urls):
 		"""
